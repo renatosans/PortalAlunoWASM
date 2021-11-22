@@ -1,0 +1,15 @@
+body{
+    background-image: url('../img/sala_de_aula.jpg');
+    background-size: 100%;
+    color: white;
+    text-shadow: 5px 5px black;
+}
+fieldset{
+    font: 20px arial, sans-serif;
+    opacity: 0.8;
+    background-color: darkkhaki;
+    width: 50%;
+}
+a{
+    color: white;
+}
