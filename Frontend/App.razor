@@ -1,14 +1,28 @@
-﻿<style>
+﻿
+@inject HttpClient Http;
+@using PortalAlunoWASM.components;
+
+
+<style>
     .logo{
         width:200px; height:200px;
     }
 </style>
 
 <div>
-    <h1>Welcome to @Title!</h1>
+    <h1>Welcome to Blazor</h1>
 	<img src="../img/logo.png" class="logo" />
 </div>
 
+
+<div style="text-align:center">
+	@foreach (Professor professor in dadosProfessores)
+    {
+		<CadastroProfessor professor="@professor" />
+    }
+</div>
+
+<!--
 <form name="aluno" method="post">
 	<fieldset>
 		<legend>Cadastro de Aluno</legend>
@@ -32,8 +46,14 @@
 		<input type="submit" /> 
 	</fieldset>
 </form>
-
+-->
 
 @code {
-    string Title = "Blazor";
+	private Professor[] dadosProfessores = new Professor[] { };
+
+	protected override async Task OnInitializedAsync()
+	{
+		dadosProfessores = await Http.GetFromJsonAsync<Professor[]>("/listarProfessores");
+		Professor professor = dadosProfessores[0];
+	}
 }

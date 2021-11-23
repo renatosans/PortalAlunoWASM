@@ -1,0 +1,23 @@
+﻿
+<div class='vertical-container rounded-corners'>
+    <img class='foto' src='@GetImage()' />
+    <span> @professor.nome </span> <br/>
+    <span> @professor.email </span> <br/>
+    <button class='roundIcon contato' @onclick="contato" />
+</div>
+
+
+@code {
+    [Parameter]
+    public Professor? professor { get; set; }
+
+    private void contato()
+    {
+        // not implemented yet
+    }
+
+    private String GetImage()
+    {
+        return "data:" + @professor.formatoImagem + ", " + @professor.foto;
+    }
+}

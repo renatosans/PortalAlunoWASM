@@ -1,0 +1,27 @@
+﻿
+.rounded-corners {
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #C0C5C3;
+}
+
+.vertical-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.foto {
+    height: 250px;
+}
+
+.roundIcon {
+    border: 0px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+    .roundIcon:hover {
+        background-color: #FF8C00;
+    }
