@@ -1,5 +1,6 @@
 {
   "name": "portal_aluno",
+  "type": "module",
   "version": "1.0.0",
   "description": "Portal do Aluno",
   "main": "index.js",
