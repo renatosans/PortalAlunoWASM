@@ -16,37 +16,12 @@
 
 
 <div style="text-align:center">
-	@foreach (Professor professor in dadosProfessores)
+    @foreach (Professor professor in dadosProfessores)
     {
-		<CadastroProfessor professor="@professor" />
+        <CadastroProfessor professor="@professor" />
     }
 </div>
 
-<!--
-<form name="aluno" method="post">
-	<fieldset>
-		<legend>Cadastro de Aluno</legend>
-
-		<label>
-			<span>Nome</span>
-			<input type="text" name="nome" />
-		</label>
-		<br/><br/>
-		<label>
-			<span>Série</span>
-			<input type="text" name="serie" />
-		</label>
-		<br/><br/>
-		<label>
-			<span>Classe</span>
-			<input type="text" name="classe" />
-		</label>
-		<br/><br/>
-
-		<input type="submit" /> 
-	</fieldset>
-</form>
--->
 
 @code {
 	private Professor[] dadosProfessores = new Professor[] { };
@@ -54,6 +29,5 @@
 	protected override async Task OnInitializedAsync()
 	{
 		dadosProfessores = await Http.GetFromJsonAsync<Professor[]>("/listarProfessores");
-		Professor professor = dadosProfessores[0];
 	}
 }
