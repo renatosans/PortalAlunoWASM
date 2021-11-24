@@ -1,9 +1,24 @@
-body{
-    background-image: url('../img/sala_de_aula.jpg');
-    background-size: 100%;
-    color: white;
-    text-shadow: 5px 5px black;
+* {
+    border: 0;
+    padding: 0;
 }
+
+body {
+    color: white;
+    background-size: 100%;
+    background-image: url('../img/sala_de_aula.jpg');
+}
+
+.container {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 325px));
+    gap: 10px;
+}
+
 fieldset{
     font: 20px arial, sans-serif;
     opacity: 0.8;

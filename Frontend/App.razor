@@ -10,16 +10,18 @@
 </style>
 
 <div>
-    <h1>Welcome to Blazor</h1>
-	<img src="../img/logo.png" class="logo" />
+    <h1>Quadro de funcionários</h1>
+	<!-- <img src="../img/logo.png" class="logo" /> -->
 </div>
 
 
-<div style="text-align:center">
-    @foreach (Professor professor in dadosProfessores)
-    {
-        <CadastroProfessor professor="@professor" />
-    }
+<div class="container">
+    <div class="grid">
+        @foreach (Professor professor in dadosProfessores)
+        {
+            <CadastroProfessor professor="@professor" />
+        }
+    </div>
 </div>
 
 
