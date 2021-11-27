@@ -25,3 +25,14 @@
     .roundIcon:hover {
         background-color: #FF8C00;
     }
+
+.contato {
+    position: absolute;
+    bottom: 90px;
+    right: 30px;
+    background-image: url('icons/phone.svg');
+    background-color: rgb(2, 132, 253);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+}
