@@ -80,3 +80,12 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+INSERT INTO portal_aluno.professor (`id`,`nome`,`email`,`foto`,`formatoImagem`) VALUES (1,'ISABELA CRISTINA CASSIANO','isabela@gmail.com','','');
+INSERT INTO portal_aluno.professor (`id`,`nome`,`email`,`foto`,`formatoImagem`) VALUES (2,'CAROLINA MENEZES DA COSTA','carolina@terra.com.br','','');
+INSERT INTO portal_aluno.professor (`id`,`nome`,`email`,`foto`,`formatoImagem`) VALUES (3,'LUIZ AUGUSTO TEIXEIRA BRANCO','luizaugusto@gmail.com','','');
+INSERT INTO portal_aluno.professor (`id`,`nome`,`email`,`foto`,`formatoImagem`) VALUES (4,'CAIO BATISTA CABRAL','caiocabral@hotmail.com.br','','');
+INSERT INTO portal_aluno.professor (`id`,`nome`,`email`,`foto`,`formatoImagem`) VALUES (5,'VINICIUS RODRIGUES FEITOZA VILLAÇA','vinicius@hotmail.com','','');
+INSERT INTO portal_aluno.professor (`id`,`nome`,`email`,`foto`,`formatoImagem`) VALUES (6,'GEILDA CAMPOS ALVÁRIO MARQUEZ','geilda33@gmail.com','','');
