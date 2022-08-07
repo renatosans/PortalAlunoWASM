@@ -4,7 +4,7 @@ import express from "express";
 
 
 var app = express();
-const staticRoot = '../Frontend/publish/wwwroot'; // diretório produzido pelo comando  >  DOTNET PUBLISH
+const staticRoot = '../Frontend/publish/wwwroot'; // diretório produzido por:   dotnet publish -o publish
 const port = 3000;
 
 // configura os parametros de conexão
