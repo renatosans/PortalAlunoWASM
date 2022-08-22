@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,4 +5,40 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model aluno {
+  rg     String @id @unique(map: "rg_UNIQUE") @db.VarChar(30)
+  nome   String @db.VarChar(150)
+  serie  String @db.VarChar(30)
+  classe String @db.VarChar(30)
+  nota   nota[] @ignore
+}
+
+model materia {
+  codigo    Int    @id @unique(map: "codigoMateria_UNIQUE")
+  nome      String @db.VarChar(120)
+  descri__o String @map("descrição") @db.VarChar(250)
+  nota      nota[] @ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by the Prisma Client.
+model nota {
+  materia               Int
+  aluno                 String  @db.VarChar(30)
+  bimestre              Int
+  aluno_alunoTonota     aluno   @relation(fields: [aluno], references: [rg], onDelete: NoAction, onUpdate: NoAction, map: "nota_aluno")
+  materia_materiaTonota materia @relation(fields: [materia], references: [codigo], onDelete: NoAction, onUpdate: NoAction, map: "nota_materia")
+
+  @@index([aluno])
+  @@index([materia])
+  @@ignore
+}
+
+model professor {
+  id            Int    @id @default(autoincrement())
+  nome          String @db.VarChar(150)
+  email         String @db.VarChar(120)
+  foto          String @db.LongText
+  formatoImagem String @db.VarChar(45)
 }
