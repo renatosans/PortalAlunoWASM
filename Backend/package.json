@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "prisma": "^4.2.1"
   }
 }
