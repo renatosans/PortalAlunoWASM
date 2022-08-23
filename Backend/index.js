@@ -3,12 +3,16 @@ import express from 'express';
 import { pool } from './config/db.js';
 
 
+const port = 3000;
 var app = express();
 const staticRoot = '../Frontend/publish/wwwroot'; // diretório produzido por:   dotnet publish -o publish
-const port = 3000;
+
 
 app.use("/", express.static(staticRoot));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
+// setHeader('Access-Control-Allow-Origin', '*')
 
 // inicia a API escutando na porta 3000
 app.listen(port, () => console.log('Express escutando chamadas na porta ' + port));
