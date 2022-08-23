@@ -1,6 +1,5 @@
 {
   "name": "portal_aluno",
-  "type": "module",
   "version": "1.0.0",
   "description": "Portal do Aluno",
   "main": "index.js",
@@ -12,6 +11,7 @@
   "author": "Renato R. Sanseverino",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.1.1",
     "express": "^4.17.1",
     "mysql2": "^2.3.3",
     "prisma": "^4.2.1"

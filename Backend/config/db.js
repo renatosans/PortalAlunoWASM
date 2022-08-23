@@ -1,13 +1,21 @@
-import { createPool } from 'mysql2/promise';
+const { PrismaClient } = require('@prisma/client');
 
 
-const pool = createPool({
-	host: 'localhost',
-	user: 'root',
-	password: 'p@ssw0rd',
-	port: 3306,
-	database: 'portal_aluno',
-	// ssl: {}
-})
+const host     = 'localhost'
+const username = 'root'
+const password = 'p@ssw0rd'
+const port     = 3306
+const database = 'portal_aluno'
+const ssl      = false
+const setSSL   = 'sslaccept=strict&sslmode=require'
 
-export { pool }
+
+// DATABASE_URL="mysql://root:p@ssw0rd@localhost:3306/portal_aluno"
+let url = `mysql://${username}:${password}@${host}:${port}/${database}`;
+if (ssl) {
+    url = url + `?${setSSL}`;
+}
+
+const prisma = new PrismaClient({datasources: { db: { url: url } } })
+
+module.exports = prisma
